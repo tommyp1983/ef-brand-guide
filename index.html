@@ -1,384 +1,473 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow, noarchive">
-<title>Exit Forward — Brand Guide</title>
-<style>
-/* ---------- Fonts ---------- */
-@font-face{font-family:"Bebas Neue";src:url("fonts/BebasNeue-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Minion Pro";src:url("fonts/MinionPro-It.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:"Inter";src:url("fonts/Inter24pt-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Inter";src:url("fonts/Inter24pt-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Inter";src:url("fonts/Inter24pt-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exit Forward · Brand Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Minion+Pro:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* ---------- Tokens ---------- */
-:root{
-    --ef-black:#000;
-    --ef-white:#fff;
-    --fg-muted:rgba(255,255,255,0.64);
-    --fg-subtle:rgba(255,255,255,0.40);
-    --hairline:rgba(255,255,255,0.24);
-    --font-display:"Bebas Neue","Oswald",Impact,sans-serif;
-    --font-serif:"Minion Pro","EB Garamond",Georgia,serif;
-    --font-sans:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-    --ease-out:cubic-bezier(0.22,1,0.36,1);
-    --dur-fast:150ms;
-}
+        html, body {
+            background: #000;
+            color: #fff;
+            font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+            overflow-x: hidden;
+        }
 
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{
-    background:var(--ef-black);
-    color:var(--ef-white);
-    font-family:var(--font-sans);
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-    overflow-x:hidden;
-}
+        body {
+            padding: 0;
+        }
 
-/* ---------- Navigation ---------- */
-nav{
-    position:fixed;
-    top:0;left:0;right:0;
-    background:rgba(0,0,0,0.95);
-    backdrop-filter:blur(8px);
-    -webkit-backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--hairline);
-    z-index:1000;
-    padding:18px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-nav .nav-logo{height:24px;width:auto;display:block}
-nav .download-btn{
-    background:var(--ef-white);
-    color:var(--ef-black);
-    border:none;
-    padding:10px 18px;
-    font-family:var(--font-sans);
-    font-size:12px;
-    font-weight:500;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    cursor:pointer;
-    border-radius:0;
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-    transition:opacity var(--dur-fast) var(--ease-out);
-}
-nav .download-btn:hover{opacity:0.7}
-nav .download-btn:active{opacity:0.5}
-nav .download-btn svg{width:18px;height:9px;fill:currentColor;transition:transform 200ms var(--ease-out)}
-nav .download-btn:hover svg{transform:translateX(4px)}
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            z-index: 1000;
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-main{padding-top:78px;padding-bottom:120px}
+        nav .logo {
+            width: 32px;
+            height: auto;
+        }
 
-/* ---------- Cards ---------- */
-.card{
-    box-sizing:border-box;
-    max-width:720px;
-    padding:32px 36px;
-    background:var(--ef-black);
-    color:var(--ef-white);
-    margin:0 auto 32px;
-}
-.card.light{background:var(--ef-white);color:var(--ef-black)}
-.card.light .meta{color:rgba(0,0,0,0.5)}
-.card.light .version{color:rgba(0,0,0,0.5)}
-.card.flush{padding:0}
+        nav .download-btn {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            font-family: "Inter";
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 0;
+            transition: opacity 0.2s ease;
+        }
 
-.meta{
-    font-family:var(--font-sans);
-    font-size:12px;
-    font-weight:500;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--fg-subtle);
-    margin-bottom:18px;
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-}
-.meta::before{content:"";display:inline-block;width:28px;height:1px;background:currentColor}
-.card.light .meta::before{background:currentColor}
+        nav .download-btn:hover {
+            opacity: 0.7;
+        }
 
-h1{
-    font-family:var(--font-display);
-    font-weight:400;
-    font-size:80px;
-    letter-spacing:0.005em;
-    line-height:0.88;
-    text-transform:uppercase;
-    margin:0 0 12px 0;
-}
-h2{
-    font-family:var(--font-display);
-    font-weight:400;
-    font-size:56px;
-    letter-spacing:0.005em;
-    line-height:0.95;
-    text-transform:uppercase;
-    margin:0;
-}
-h3{
-    font-family:var(--font-display);
-    font-weight:400;
-    font-size:30px;
-    letter-spacing:0.01em;
-    line-height:1.05;
-    text-transform:uppercase;
-    margin:32px 0 14px 0;
-}
-h3:first-child{margin-top:0}
+        main {
+            padding-top: 64px;
+            padding-bottom: 80px;
+        }
 
-p{
-    font-family:var(--font-sans);
-    font-size:16px;
-    line-height:1.65;
-    margin:0 0 16px 0;
-}
-ul,ol{
-    font-family:var(--font-sans);
-    font-size:16px;
-    line-height:1.75;
-    margin:0;
-    padding-left:0;
-    list-style:none;
-}
-li{margin-bottom:12px;position:relative;padding-left:32px}
-li::before{content:"→";position:absolute;left:0;top:0;font-weight:400;color:currentColor}
-li strong{font-weight:600}
+        .card {
+            box-sizing: border-box;
+            max-width: 700px;
+            padding: 28px 32px;
+            background: #000;
+            color: #fff;
+            margin: 0 auto 32px;
+        }
 
-.divider{height:72px}
+        .card.light {
+            background: #fff;
+            color: #000;
+        }
 
-.row{
-    max-width:720px;
-    margin:0 auto 32px;
-    display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-}
-.row > .card{margin:0;flex:1;min-width:300px;max-width:none}
+        .card.light .meta {
+            color: rgba(0,0,0,0.5);
+        }
 
-.version{
-    font-family:var(--font-sans);
-    font-size:11px;
-    color:var(--fg-subtle);
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    margin-top:18px;
-}
+        .meta {
+            font-family: "Inter";
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 14px;
+        }
 
-/* ---------- Hero ---------- */
-.hero{
-    max-width:720px;
-    margin:0 auto 32px;
-    position:relative;
-    aspect-ratio:16/10;
-    overflow:hidden;
-    background:#111;
-}
-.hero img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);display:block}
-.hero::after{
-    content:"";
-    position:absolute;
-    left:0;right:0;bottom:0;top:40%;
-    background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);
-}
-.hero-content{position:absolute;left:36px;right:36px;bottom:32px;z-index:2}
-.hero-content .ef-tagline{
-    font-family:var(--font-serif);
-    font-style:italic;
-    font-size:24px;
-    line-height:1.25;
-    letter-spacing:-0.01em;
-    margin-top:14px;
-    color:rgba(255,255,255,0.9);
-}
-.hero-content h1{font-size:84px}
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 72px;
+            font-weight: bold;
+            letter-spacing: 0.01em;
+            line-height: 1;
+            margin: 0 0 8px 0;
+        }
 
-/* ---------- Statement ---------- */
-.statement{display:flex;align-items:flex-start;gap:18px;margin:0 0 16px 0}
-.statement svg{flex:0 0 auto;width:28px;height:14px;margin-top:8px;fill:currentColor}
-.statement p{margin:0}
+        h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 56px;
+            font-weight: bold;
+            letter-spacing: 0.01em;
+            line-height: 1.1;
+            margin: 0 0 12px 0;
+        }
 
-/* ---------- Brand Kit grid ---------- */
-.kit-section{max-width:720px;margin:0 auto;padding:0 36px}
-.kit-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:0;
-    margin:24px 0 0 0;
-    border-top:1px solid var(--hairline);
-    border-left:1px solid var(--hairline);
-}
-.kit-item{
-    border-right:1px solid var(--hairline);
-    border-bottom:1px solid var(--hairline);
-    padding:24px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    cursor:pointer;
-    transition:opacity 200ms var(--ease-out);
-    background:transparent;
-}
-.kit-item:hover{opacity:0.7}
-.kit-item:hover svg{transform:translateX(6px)}
-.kit-item svg{transition:transform 250ms var(--ease-out);width:24px;height:12px;fill:currentColor}
-.kit-label{font-family:var(--font-sans);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase}
+        h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 0.01em;
+            line-height: 1.1;
+            margin: 32px 0 12px 0;
+        }
 
-/* ---------- Type samples ---------- */
-.type-samples{display:grid;grid-template-columns:120px 1fr;row-gap:24px;column-gap:24px;align-items:baseline}
-.type-label{font-size:11px;color:var(--fg-subtle);letter-spacing:0.08em;text-transform:uppercase;font-weight:500}
+        p {
+            font-family: "Inter";
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0 0 16px 0;
+        }
 
-/* ---------- Spacing ---------- */
-.spacing-demo{display:flex;align-items:flex-end;gap:16px;height:120px;margin-top:8px}
-.spacing-unit{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
-.spacing-box{background:var(--ef-white)}
-.spacing-label{font-family:var(--font-sans);font-size:10px;color:var(--fg-muted);letter-spacing:0.06em;text-transform:uppercase}
+        .subtitle {
+            font-family: "Inter";
+            font-size: 15px;
+            color: rgba(255,255,255,0.6);
+            margin: 0 0 12px 0;
+        }
 
-/* ---------- Borders ---------- */
-.borders-demo{display:flex;gap:16px;align-items:stretch}
-.border-item{flex:1;border:1px solid var(--hairline);padding:18px}
-.border-item.strong{border:1px solid var(--ef-white)}
-.border-item.rule{border:none;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:18px 0}
-.border-title{font-family:var(--font-display);font-size:24px;text-transform:uppercase;line-height:1;letter-spacing:0.01em}
-.border-desc{font-family:var(--font-sans);font-size:11px;color:var(--fg-muted);margin-top:8px;line-height:1.5;letter-spacing:0.04em;text-transform:uppercase}
+        .card.light .subtitle {
+            color: rgba(0,0,0,0.6);
+        }
 
-/* ---------- Buttons ---------- */
-.buttons-demo{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:20px 0 0 0}
-.btn{
-    display:inline-flex;
-    align-items:center;
-    gap:14px;
-    padding:14px 22px;
-    font-family:var(--font-sans);
-    font-weight:500;
-    font-size:13px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    text-decoration:none;
-    cursor:pointer;
-    border-radius:0;
-    transition:opacity var(--dur-fast) var(--ease-out);
-    border:none;
-}
-.btn svg{width:20px;height:10px;fill:currentColor;transition:transform 250ms var(--ease-out)}
-.btn:hover{opacity:0.7}
-.btn:hover svg{transform:translateX(6px)}
-.btn:active{opacity:0.5}
-.btn-primary{background:var(--ef-white);color:var(--ef-black)}
-.btn-secondary{background:transparent;color:var(--ef-white);border:1px solid var(--ef-white);padding:13px 21px}
-.btn-text{padding:0 0 4px 0;background:none;color:var(--ef-white);border-bottom:1px solid var(--ef-white)}
+        ul, ol {
+            font-family: "Inter";
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0;
+            padding-left: 20px;
+        }
 
-/* ---------- Colour cards ---------- */
-.swatch-stack{display:flex;flex-direction:column}
-.swatch{padding:28px 36px;display:flex;align-items:center;gap:20px}
-.swatch + .swatch{border-top:1px solid var(--hairline)}
-.swatch.dark{background:var(--ef-black);color:var(--ef-white)}
-.swatch.light{background:var(--ef-white);color:var(--ef-black)}
-.swatch.light + .swatch{border-top:0}
-.swatch-chip{width:32px;height:32px;flex:0 0 auto}
-.swatch.dark .swatch-chip{background:var(--ef-black);border:1px solid rgba(255,255,255,0.6)}
-.swatch.light .swatch-chip{background:var(--ef-white);border:1px solid rgba(0,0,0,0.6)}
-.swatch-hex{font-family:var(--font-sans);font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;opacity:0.5;margin-bottom:2px}
-.swatch-name{font-family:var(--font-display);font-size:24px;letter-spacing:0.02em;text-transform:uppercase;line-height:1}
+        li {
+            margin-bottom: 12px;
+        }
 
-/* ---------- Imagery gallery ---------- */
-.imagery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px}
-.imagery-grid figure{position:relative;aspect-ratio:4/3;overflow:hidden;margin:0}
-.imagery-grid img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05)}
-.imagery-grid figcaption{position:absolute;left:14px;bottom:12px;font-family:var(--font-sans);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.85);z-index:2}
-.imagery-grid figure::after{content:"";position:absolute;inset:auto 0 0 0;height:50%;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%)}
+        li strong {
+            font-weight: 600;
+        }
 
-/* ---------- Chevron pattern ---------- */
-.chevron-pattern{
-    height:64px;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23ffffff' stroke-width='1.5'><path d='M6 12 L24 30 L42 12'/><path d='M6 24 L24 42 L42 24'/></svg>");
-    background-repeat:repeat-x;
-    background-position:left center;
-    background-size:32px 32px;
-    opacity:0.7;
-    margin-top:24px;
-}
+        .divider {
+            height: 80px;
+        }
 
-/* ---------- Logo card ---------- */
-.logo-card{padding:0;background:var(--ef-black)}
-.logo-card .logo-frame{padding:56px 40px;display:flex;align-items:center;justify-content:center}
-.logo-card .logo-frame img{width:300px;height:auto;display:block}
-.logo-card .logo-footer{border-top:1px solid var(--hairline);padding:18px 32px;font-family:var(--font-sans);font-size:11px;color:var(--fg-subtle);letter-spacing:0.08em;text-transform:uppercase}
+        .row {
+            display: flex;
+            gap: 32px;
+            margin: 32px 0;
+            flex-wrap: wrap;
+        }
 
-/* ---------- Translucency row ---------- */
-.alpha-row{display:flex;gap:8px;margin:24px 0 0 0}
-.alpha-col{flex:1}
-.alpha-swatch{height:56px}
-.alpha-caption{font-family:var(--font-sans);font-size:10px;color:var(--fg-muted);margin-top:8px;letter-spacing:0.06em;text-transform:uppercase}
+        .row-item {
+            flex: 1;
+            min-width: 300px;
+        }
 
-/* ---------- Footer ---------- */
-.footer{text-align:left;border-top:1px solid var(--hairline);padding:36px 36px 0 36px}
-.footer .footer-mark{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:18px}
-.footer img{height:20px;width:auto;opacity:0.7}
+        .arrow {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            line-height: 1;
+            color: rgba(255,255,255,0.5);
+            display: inline-block;
+            margin-right: 12px;
+        }
 
-/* ---------- Responsive ---------- */
-@media(max-width:768px){
-    nav{padding:14px 20px}
-    main{padding-top:62px}
-    .card{padding:24px 22px;margin-bottom:24px}
-    .card.flush{padding:0}
-    .kit-section{padding:0 22px}
-    .swatch{padding:22px}
-    .hero-content{left:22px;right:22px;bottom:22px}
-    .hero-content h1{font-size:48px}
-    h1{font-size:48px}
-    h2{font-size:40px}
-    h3{font-size:24px}
-    .kit-grid{grid-template-columns:1fr}
-    .type-samples{grid-template-columns:1fr;row-gap:6px}
-    .type-samples > div:nth-child(odd){margin-top:14px}
-    .spacing-demo{overflow-x:auto;height:auto;padding-bottom:8px}
-    .borders-demo{flex-direction:column}
-    .imagery-grid{grid-template-columns:1fr}
-    .logo-card .logo-frame{padding:36px 24px}
-    .logo-card .logo-frame img{width:220px}
-}
-</style>
+        .card.light .arrow {
+            color: rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 32px;
+        }
+
+        .version {
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 16px;
+        }
+
+        .card.light .version {
+            color: rgba(0,0,0,0.4);
+        }
+
+        /* Brand Kit Section */
+        .kit-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .kit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .kit-item {
+            border: 1px solid rgba(255,255,255,0.24);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .kit-item:hover {
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .kit-label {
+            font-family: "Inter";
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .kit-icon {
+            font-size: 24px;
+            margin-left: 16px;
+        }
+
+        /* Type samples */
+        .type-samples {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            row-gap: 20px;
+            align-items: baseline;
+            font-family: Inter;
+        }
+
+        .type-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        /* Spacing scale */
+        .spacing-demo {
+            display: flex;
+            align-items: flex-end;
+            gap: 14px;
+            height: 110px;
+        }
+
+        .spacing-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .spacing-box {
+            background: #fff;
+        }
+
+        .spacing-label {
+            font-family: Inter;
+            font-size: 10px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Borders demo */
+        .borders-demo {
+            display: flex;
+            gap: 16px;
+            align-items: stretch;
+        }
+
+        .border-item {
+            flex: 1;
+            border: 1px solid rgba(255,255,255,0.24);
+            padding: 14px;
+        }
+
+        .border-item.strong {
+            border: 1px solid #fff;
+        }
+
+        .border-item.rule {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.24);
+            border-bottom: 1px solid rgba(255,255,255,0.24);
+            padding: 14px 0;
+        }
+
+        .border-title {
+            font-family: 'Bebas Neue';
+            font-size: 22px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .border-desc {
+            font-family: Inter;
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        /* Buttons */
+        .buttons-demo {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .button-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 22px;
+            background: #fff;
+            color: #000;
+            font-family: Inter;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 1;
+            transition: opacity 0.2s ease;
+            border: none;
+        }
+
+        .button-primary:hover {
+            opacity: 0.7;
+        }
+
+        .button-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 22px;
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            font-family: Inter;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 1;
+            transition: opacity 0.2s ease;
+        }
+
+        .button-secondary:hover {
+            opacity: 0.7;
+        }
+
+        .button-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-family: Inter;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 3px;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 1;
+            transition: opacity 0.2s ease;
+            background: none;
+            border: none;
+            border-bottom: 1px solid #fff;
+        }
+
+        .button-text:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 12px 20px;
+            }
+
+            main {
+                padding-top: 48px;
+            }
+
+            .card {
+                padding: 20px 20px;
+                margin-bottom: 24px;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            h2 {
+                font-size: 40px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            .kit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .type-samples {
+                grid-template-columns: 1fr;
+            }
+
+            .spacing-demo {
+                overflow-x: auto;
+                height: auto;
+            }
+
+            .borders-demo {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="fa" viewBox="0 0 48 24">
-        <path d="M0 10.5 H32 V6 L48 12 L32 18 V13.5 H0 Z"></path>
-    </symbol>
-</svg>
-
 <!-- Navigation -->
 <nav>
-    <a href="#top" aria-label="Exit Forward home"><img src="assets/exit-forward-logo.svg" alt="Exit Forward" class="nav-logo"></a>
-    <button class="download-btn" onclick="downloadBrandKit()">
-        Download Brand Kit
-        <svg><use href="#fa"></use></svg>
-    </button>
+    <img src="exit-forward-logo.svg" alt="Exit Forward" class="logo">
+    <button class="download-btn" onclick="downloadBrandKit()">↓ Download Brand Kit</button>
 </nav>
 
-<main id="top">
+<main>
 
-<!-- HERO -->
-<div class="hero">
-    <img src="assets/photo-skyline.jpg" alt="">
-    <div class="hero-content">
-        <div class="meta" style="margin-bottom:14px">Exit Forward</div>
-        <h1>Brand Guide</h1>
-        <p class="ef-tagline">Where what you built becomes what lives on.</p>
-    </div>
-</div>
-
-<div class="card" style="margin-top:-12px">
-    <p style="font-size:18px;line-height:1.6;margin-bottom:0">Voice, messaging and positioning for Exit Forward Holdings. An internal working document for team alignment and founder conversations.</p>
-    <p class="version">Version 2.1 — May 2026</p>
+<!-- HEADER -->
+<div class="card">
+    <h1>Brand Guide</h1>
+    <p class="subtitle">Voice, Messaging, and Positioning</p>
+    <p class="version">Version 2.1 · May 2026</p>
 </div>
 
 <div class="divider"></div>
@@ -390,19 +479,30 @@ li strong{font-weight:600}
 </div>
 
 <div class="card">
-    <p>Australia is staring down structural problems in founder-led businesses. Exit Forward addresses three interconnected challenges.</p>
+    <p>Australia is staring down a structural problem in founder-led businesses.</p>
+    <p>Three of them, actually. All interconnected. That&rsquo;s why Exit Forward exists.</p>
 
     <h3>The Handover Problem</h3>
-    <p>A wave of baby boomer founders are reaching a life stage where time becomes precious. They've built solid trades and SMEs over 30 to 40 years. The business is their superannuation. Default options feel bad: sell to a stranger via a broker, wind it down, or hope a family member wants it. None preserve what they built.</p>
+    <p>A wave of baby boomer founders are reaching a life stage where time becomes precious.</p>
+    <p>Thirty, forty years they&rsquo;ve put into building solid trades and SMEs. The business is their super.</p>
+    <p>And the default options all feel wrong. Sell to a stranger through a broker. Wind it down. Hope a family member wants it.</p>
+    <p>None of them preserve what they built.</p>
 
     <h3>The Ceiling Problem</h3>
-    <p>A larger group of founders, of any age, have built something solid and hit a wall. They've outgrown their own capacity. The business runs through them. They don't know how to scale beyond where it currently is. They're not retiring. They're stuck.</p>
+    <p>A larger group of founders, of any age, have built something solid and hit a wall.</p>
+    <p>Not because they&rsquo;ve failed. Because they&rsquo;ve succeeded.</p>
+    <p>The business runs through them. They&rsquo;ve outgrown their own capacity. They don&rsquo;t know how to scale beyond where it currently is.</p>
+    <p>They&rsquo;re not retiring. They&rsquo;re stuck.</p>
 
     <h3>The Capital Lockout</h3>
-    <p>A generation of capable, motivated young operators can't get on the property ladder, let alone buy a business. The capital gap between ready to run something and able to afford something has never been wider.</p>
+    <p>And underneath them, there&rsquo;s a generation of capable, motivated young operators with nowhere to go.</p>
+    <p>They can&rsquo;t get on the property ladder. Let alone buy a business.</p>
+    <p>The capital gap between ready to run something and able to afford it has never been wider.</p>
 
     <h3>Exit Forward Closes the Gap</h3>
-    <p>We partner with founders who need to break through, scale through, or hand over. We bring smart capital, a proven growth engine, and the operating experience to make it work. Where it fits, we match outgoing founders with capable incoming operators we've curated.</p>
+    <p>We work alongside founders who need to break through, scale through, or hand over.</p>
+    <p>We&rsquo;ve been there. We&rsquo;ve built businesses ourselves.</p>
+    <p>We bring smart capital. We bring the growth engine. And we bring the partnership to make it work.</p>
 </div>
 
 <div class="divider"></div>
@@ -414,32 +514,35 @@ li strong{font-weight:600}
 </div>
 
 <div class="card">
-    <p>We take an equity stake. That's the deal. Founders get liquidity now without a full exit. We work alongside them to grow what's there. We bring capital, the systems we used to scale Dilate, and the experience of having actually sold a business.</p>
+    <p>We take an equity stake. That&rsquo;s the deal.</p>
+    <p>Founders get liquidity now, without a full exit. We work alongside them to grow what&rsquo;s already there.</p>
+    <p>We bring capital. We bring the systems we used to scale Dilate. And we bring the experience of having actually sold a business.</p>
 
     <h3>Core Principle</h3>
-    <div class="statement">
-        <svg><use href="#fa"></use></svg>
-        <p>Equity is non-negotiable. Every Exit Forward engagement involves us taking equity. Always. We are not advisors-for-hire. We are not consultants. We are not a fractional GM. If equity isn't on the table, there is no deal.</p>
-    </div>
+    <p><span class="arrow">&rarr;</span> Equity is non-negotiable.</p>
+    <p>Every Exit Forward engagement involves us taking equity. Always.</p>
+    <p>We&rsquo;re not advisors for hire. We&rsquo;re not consultants billing for time. We&rsquo;re not a fractional GM.</p>
+    <p>If equity isn&rsquo;t on the table, there&rsquo;s no deal.</p>
 </div>
 
 <div class="card light">
     <div class="meta">Public Positioning</div>
 
-    <h3 style="margin-top:8px">One Sentence</h3>
-    <p>Exit Forward is a founder-first equity growth partner. We come in alongside founders who've built something solid but feel the weight of holding it together. We take pressure off, grow what's there, and give them their options back.</p>
+    <h3 style="margin-top: 0;">One Sentence</h3>
+    <p>Exit Forward is a founder-first equity growth partner. We come in alongside founders who&rsquo;ve built something solid but feel the weight of holding it together. We take the pressure off, grow what&rsquo;s there, and give them their options back.</p>
 
     <h3>Pub Test</h3>
     <p>Equity growth partner. We give founders options.</p>
 
     <h3>Purpose</h3>
-    <p>Founders punch through ceilings — in their business and their life. We partner with them while they do it.</p>
+    <p>We help founders punch through ceilings. In their business. In their life.</p>
 
     <h3>The Niche</h3>
-    <p>The middle path between grinding and selling out. The option most founders don't know exists.</p>
+    <p>The middle path between grinding and selling out. The option most founders don&rsquo;t even know exists.</p>
 
     <h3>Math Line</h3>
-    <p>Sell half, double the business, you're back where you started. With cash off the table and a partner to lean on.</p>
+    <p>Sell half. Double the business. You&rsquo;re back where you started.</p>
+    <p>Cash off the table. A partner to lean on.</p>
 </div>
 
 <div class="divider"></div>
@@ -451,33 +554,35 @@ li strong{font-weight:600}
 </div>
 
 <div class="card">
-    <p>Exit Forward markets to founders. Full stop. Two distinct personas, both builders, both hitting walls.</p>
+    <p>Exit Forward markets to founders. Full stop.</p>
+    <p>Two distinct personas. Both builders. Both hitting walls.</p>
 </div>
 
 <div class="row">
-    <div class="card">
+    <div class="card" style="flex: 1; margin: 0;">
         <div class="meta">Persona 1</div>
-        <h3 style="margin-top:8px">Boomer Founder</h3>
-        <p><strong>Trigger:</strong> Life stage. Realisation of mortality and preciousness of time.</p>
-        <p style="margin-bottom:8px"><strong>Common triggers:</strong></p>
-        <ul>
-            <li>Kids growing up, missed key moments</li>
-            <li>Friend gets suddenly ill or dies</li>
-            <li>Marriage strain from work overcommitment</li>
+        <h3 style="margin-top: 0;">Boomer Founder</h3>
+        <p><strong>Trigger:</strong> life stage. The realisation of mortality. The preciousness of time.</p>
+        <p><strong>Common triggers:</strong></p>
+        <ul style="margin-top: 0;">
+            <li>Kids growing up. Missed the moments that mattered.</li>
+            <li>A mate gets suddenly ill, or dies.</li>
+            <li>Marriage strain from being too far into the work.</li>
             <li>Imbalance. Time is finite.</li>
         </ul>
     </div>
 
-    <div class="card">
+    <div class="card" style="flex: 1; margin: 0;">
         <div class="meta">Persona 2</div>
-        <h3 style="margin-top:8px">Ceiling Founder</h3>
-        <p><strong>Trigger:</strong> Capability gap. Built something solid, hit a wall.</p>
-        <p style="margin-bottom:8px"><strong>The reality:</strong></p>
-        <ul>
-            <li>Business runs through them</li>
-            <li>Tried scaling, hiring, consultants</li>
-            <li>Hit the same wall every time</li>
-            <li>Knows something needs to change</li>
+        <h3 style="margin-top: 0;">Ceiling Founder</h3>
+        <p><strong>Trigger:</strong> capability gap. Built something solid. Hit a wall.</p>
+        <p>Not because they failed. Because they succeeded.</p>
+        <p><strong>The reality:</strong></p>
+        <ul style="margin-top: 0;">
+            <li>The business runs through them.</li>
+            <li>They&rsquo;ve tried scaling, hiring, consultants.</li>
+            <li>They hit the same wall every time.</li>
+            <li>They know something needs to change.</li>
         </ul>
     </div>
 </div>
@@ -485,7 +590,7 @@ li strong{font-weight:600}
 <div class="card">
     <h3>Right Founder (Applies to Both)</h3>
     <ul>
-        <li><strong>Self-reflective.</strong> Curious. Lifelong learner.</li>
+        <li><strong>Self-reflective.</strong> Curious. A lifelong learner.</li>
         <li><strong>Wants to build</strong> a company, not just a job.</li>
         <li><strong>Open to structure</strong> and accountability.</li>
         <li><strong>Hitting a wall</strong> and knows something needs to change.</li>
@@ -496,19 +601,18 @@ li strong{font-weight:600}
 <div class="card">
     <h3>Hard Exclusions</h3>
     <ul>
-        <li><strong>Equity-averse founders.</strong> Want growth support but won't part with equity. Not our model.</li>
+        <li><strong>Equity-averse founders.</strong> They want growth help. They won&rsquo;t part with equity. Not our model.</li>
         <li><strong>Fast exit seekers.</strong> Under 24-month horizon. Broker-style expectations.</li>
-        <li><strong>Advice-only shoppers.</strong> Want consulting hours, not partnership.</li>
+        <li><strong>Advice-only shoppers.</strong> They want consulting hours, not partnership.</li>
         <li><strong>Chaos operators.</strong> No appetite for structure or governance.</li>
     </ul>
 </div>
 
 <div class="card light">
-    <h3 style="margin-top:8px">The Beer and Burger Test</h3>
-    <div class="statement">
-        <svg><use href="#fa"></use></svg>
-        <p>Would Bodie and Tom enjoy a beer and a burger with this person? Cultural fit, energy and values alignment come before commercial terms. Always.</p>
-    </div>
+    <h3 style="margin-top: 0;">The Beer and Burger Test</h3>
+    <p><span class="arrow">&rarr;</span> Would Bodie and Tom enjoy a beer and a burger with this person?</p>
+    <p>Cultural fit. Energy. Values alignment. All of it comes before commercial terms.</p>
+    <p>Always.</p>
 </div>
 
 <div class="divider"></div>
@@ -520,23 +624,28 @@ li strong{font-weight:600}
 </div>
 
 <div class="card">
-    <p>Every deal involves equity. That's the floor. Patterns describe the shape of liquidity and involvement on top of that.</p>
+    <p>Three core motivations bring founders to the table. All three require us to take equity.</p>
 
-    <h3>1. Growth-Led</h3>
-    <p>Capital and partnership in. Founder liquidity is minimal or deferred. The goal is to break the ceiling and grow what's there. Common with Ceiling Founders who don't need cash now and want a partner to scale with.</p>
+    <h3>1. Growth-led</h3>
+    <p>The founder has found product-market fit. They see clear runway for significant growth.</p>
+    <p>They&rsquo;re willing to sell 50% because the math is compelling.</p>
+    <p>They get a capital partner to accelerate. Operational support to scale. Future optionality they wouldn&rsquo;t have on their own.</p>
+    <p>The business grows faster with us than it would solo. Their 50% of a bigger pie is worth more than 100% of a smaller one.</p>
 
-    <h3>2. Partial Liquidity</h3>
-    <p>Founder takes cash off the table now, retains majority or significant equity, keeps building. Works for both personas. Removes pressure while preserving upside and control.</p>
+    <h3>2. Partial liquidity</h3>
+    <p>The founder&rsquo;s mature. The business is proven.</p>
+    <p>But capital&rsquo;s tight. Or they&rsquo;re personally tired of carrying all the weight alone.</p>
+    <p>They want some financial relief. They don&rsquo;t want to lose the business.</p>
+    <p>We buy a stake. The founder takes a distribution. We step in as a working partner to drive what&rsquo;s next.</p>
 
     <h3>3. Succession</h3>
-    <p>Staged handover, often with an internal 2IC stepping into operational leadership backed by our capital and structure. Common with Boomer Founders. Possible with Ceiling Founders where a 2IC has matured.</p>
+    <p>The founder&rsquo;s ready to step back. The business is stable. Profitable.</p>
+    <p>But they&rsquo;re not the one to take it to the next level.</p>
+    <p>We give them a clear path. They stay involved if they want to. A new leader and operating partner steps in to lead the growth, or run the transition.</p>
 </div>
 
 <div class="card">
-    <div class="statement">
-        <svg><use href="#fa"></use></svg>
-        <p>Most deals blend two patterns. The discovery conversation finds the right shape. The constant: Exit Forward holds equity in every deal.</p>
-    </div>
+    <p><span class="arrow">&rarr;</span> Core principle: equity is structural. Every deal requires EF to take meaningful ownership.</p>
 </div>
 
 <div class="divider"></div>
@@ -544,16 +653,14 @@ li strong{font-weight:600}
 <!-- EQUITY STRUCTURE -->
 <div class="card">
     <div class="meta">Operating Constraints</div>
-    <h2>Equity Structure</h2>
+    <h2>Equity is the deal</h2>
 </div>
 
 <div class="card">
-    <ul>
-        <li><strong>Equity is non-negotiable.</strong> Entry condition on every deal.</li>
-        <li><strong>50%+ is preferred.</strong> Structural position of choice for clarity and control.</li>
-        <li><strong>Below 50% is negotiable.</strong> For the right deal and right operator, willing to take minority positions.</li>
-        <li><strong>Hard constraint: operator sentiment.</strong> Equity split must track actual work and contribution, not just capital deployed. A resentful operator is a failing deal. Structure to protect psychology first, economics second.</li>
-    </ul>
+    <p>Every Exit Forward engagement involves us taking equity. Always.</p>
+    <p>It&rsquo;s what creates true alignment. We only win when you do.</p>
+    <p>That&rsquo;s what separates us from PE firms looking for a return on capital. From coaches and consultants billing for time.</p>
+    <p>We&rsquo;re invested in your success because, literally, we&rsquo;re invested in your success.</p>
 </div>
 
 <div class="divider"></div>
@@ -565,47 +672,33 @@ li strong{font-weight:600}
 </div>
 
 <div class="card">
-    <p>Photography is monochrome, high contrast, architectural. It carries the brand's calm authority — skylines, facades, industry, landscape. Never stock-smiling-in-a-boardroom. Never AI illustration.</p>
+    <p>Photography should communicate freedom, progress, and life beyond operational burnout.</p>
+    <p>Strong contrast between light and dark, to create depth and emotional impact.</p>
 
     <h3>Preferred Subjects</h3>
     <ul>
-        <li>Skylines at dusk and architectural geometry</li>
-        <li>Industrial detail — facades, structure, scale</li>
-        <li>Mountain and landscape forms</li>
-        <li>Moments of clarity, distance and transition</li>
+        <li>Open spaces and horizons.</li>
+        <li>Oceans, water, boats, and movement.</li>
+        <li>Stairs and architectural forms.</li>
+        <li>Moments of clarity and transition.</li>
     </ul>
 
-    <div class="imagery-grid">
-        <figure><img src="assets/photo-skyline.jpg" alt=""><figcaption>Skyline</figcaption></figure>
-        <figure><img src="assets/photo-architecture.jpg" alt=""><figcaption>Architecture</figcaption></figure>
-        <figure><img src="assets/photo-industry.jpg" alt=""><figcaption>Industry</figcaption></figure>
-        <figure><img src="assets/photo-landscape.jpg" alt=""><figcaption>Landscape</figcaption></figure>
-    </div>
-
     <h3>Treatment</h3>
-    <div class="statement">
-        <svg><use href="#fa"></use></svg>
-        <p>Full-bleed images with an 80% black gradient protection at the bottom. Bebas white headlines sit in the protected area. The result is cinematic, never decorative.</p>
-    </div>
+    <p><span class="arrow">&rarr;</span> Full-bleed images with an 80% black gradient overlay at the bottom. Text sits in the protected area.</p>
+    <p>The result is cinematic. High contrast.</p>
 </div>
 
 <div class="divider"></div>
 
-<!-- LOGO -->
+<!-- DESIGN SYSTEM -->
 <div class="card">
     <div class="meta">Design Foundation</div>
     <h2>Logo</h2>
 </div>
 
-<div class="card flush logo-card">
-    <div class="logo-frame">
-        <img src="assets/exit-forward-logo.svg" alt="Exit Forward wordmark">
-    </div>
-    <div class="logo-footer">Primary wordmark · White on black · Do not alter, stretch or recolour</div>
-</div>
-
-<div class="card">
-    <p style="margin-bottom:0">The "X" of the wordmark is two forward arrows — the forward dominant, the backward subordinate. The mark <em style="font-family:var(--font-serif);font-style:italic">is</em> the brand's directional motif.</p>
+<div class="card" style="padding:0;background:#000">
+    <img src="exit-forward-logo.svg" alt="Exit Forward" style="display:block;width:320px;height:auto;margin:36px 32px"/>
+    <div style="border-top:1px solid rgba(255,255,255,0.24);padding:16px 32px;font-family:Inter;font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:0.08em;text-transform:uppercase">Primary wordmark · White on black · Do not alter, stretch, or recolour</div>
 </div>
 
 <div class="divider"></div>
@@ -616,34 +709,33 @@ li strong{font-weight:600}
     <h2>Colour Palette</h2>
 </div>
 
-<div class="card flush">
-    <div class="swatch-stack">
-        <div class="swatch dark">
-            <div class="swatch-chip"></div>
-            <div>
-                <div class="swatch-hex">#000000</div>
-                <div class="swatch-name">Exit Forward Black</div>
-            </div>
+<div class="card" style="padding:0">
+    <div style="background:#000;color:#fff;padding:24px 32px;display:flex;align-items:center;gap:18px;border-bottom:1px solid rgba(255,255,255,0.24)">
+        <div style="width:28px;height:28px;background:#000;border:1px solid rgba(255,255,255,0.6)"></div>
+        <div>
+            <div style="font-family:Inter;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.5)">#000000</div>
+            <div style="font-family:'Bebas Neue';font-size:22px;letter-spacing:0.02em;text-transform:uppercase;line-height:1">Exit Forward Black</div>
         </div>
-        <div class="swatch light">
-            <div class="swatch-chip"></div>
-            <div>
-                <div class="swatch-hex">#FFFFFF</div>
-                <div class="swatch-name">Exit Forward White</div>
-            </div>
+    </div>
+    <div style="background:#fff;color:#000;padding:24px 32px;display:flex;align-items:center;gap:18px">
+        <div style="width:28px;height:28px;background:#fff;border:1px solid rgba(0,0,0,0.6)"></div>
+        <div>
+            <div style="font-family:Inter;font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(0,0,0,0.5)">#FFFFFF</div>
+            <div style="font-family:'Bebas Neue';font-size:22px;letter-spacing:0.02em;text-transform:uppercase;line-height:1">Exit Forward White</div>
         </div>
     </div>
 </div>
 
 <div class="card">
-    <h3 style="margin-top:8px">Translucency Values</h3>
-    <p>For hairline rules, eyebrow labels and hover states on dark surfaces only. Never used as a chosen brand grey.</p>
-    <div class="alpha-row">
-        <div class="alpha-col"><div class="alpha-swatch" style="background:rgba(255,255,255,1)"></div><div class="alpha-caption">Foreground 100%</div></div>
-        <div class="alpha-col"><div class="alpha-swatch" style="background:rgba(255,255,255,0.64)"></div><div class="alpha-caption">Muted 64%</div></div>
-        <div class="alpha-col"><div class="alpha-swatch" style="background:rgba(255,255,255,0.40)"></div><div class="alpha-caption">Subtle 40%</div></div>
-        <div class="alpha-col"><div class="alpha-swatch" style="background:rgba(255,255,255,0.24)"></div><div class="alpha-caption">Hairline 24%</div></div>
+    <h3 style="margin-top: 0;">Translucency Values</h3>
+    <p>For UI elements, rules, and subtle backgrounds on dark surfaces:</p>
+    <div style="display:flex;gap:10px;margin:24px 0">
+        <div style="flex:1"><div style="height:48px;background:rgba(255,255,255,1)"></div><div style="font-size:11px;margin-top:6px;color:rgba(255,255,255,0.6)">Foreground 100%</div></div>
+        <div style="flex:1"><div style="height:48px;background:rgba(255,255,255,0.64)"></div><div style="font-size:11px;margin-top:6px;color:rgba(255,255,255,0.6)">Muted 64%</div></div>
+        <div style="flex:1"><div style="height:48px;background:rgba(255,255,255,0.40)"></div><div style="font-size:11px;margin-top:6px;color:rgba(255,255,255,0.6)">Subtle 40%</div></div>
+        <div style="flex:1"><div style="height:48px;background:rgba(255,255,255,0.24)"></div><div style="font-size:11px;margin-top:6px;color:rgba(255,255,255,0.6)">Hairline 24%</div></div>
     </div>
+    <p style="font-size: 12px; line-height: 1.5; color: rgba(255,255,255,0.64); margin-top: 16px;">Alphas are for UI only. Never used as a brand grey.</p>
 </div>
 
 <div class="divider"></div>
@@ -651,58 +743,38 @@ li strong{font-weight:600}
 <!-- TYPOGRAPHY -->
 <div class="card">
     <div class="meta">Typefaces</div>
-    <h2>Typography</h2>
+    <h2>Typography System</h2>
 </div>
 
-<div class="card">
-    <h3 style="margin-top:8px">Display — Bebas Neue</h3>
-    <div class="meta" style="margin:6px 0 18px 0">Bold, confident, uppercase. Regular weight only.</div>
-    <div style="font-family:var(--font-display);text-transform:uppercase;line-height:0.85;letter-spacing:0.005em;font-size:78px">Exit the business.</div>
-    <p style="font-size:11px;color:var(--fg-subtle);margin-top:18px;letter-spacing:0.06em;text-transform:uppercase">Bebas Neue Regular · 78 / 66 · Uppercase · 0 tracking</p>
+<div class="card" style="padding:24px 32px">
+    <h3 style="margin-top: 0;">Display · Bebas Neue</h3>
+    <div class="meta">Bold, confident, uppercase</div>
+    <div style="font-family:'Bebas Neue';text-transform:uppercase;line-height:0.85;margin:20px 0">
+        <div style="font-size:78px">Exit the business.</div>
+    </div>
+    <p style="font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 12px;">Bebas Neue Regular · 78/66 · UPPERCASE · 0 tracking</p>
 </div>
 
-<div class="card">
-    <h3 style="margin-top:8px">Body — Inter</h3>
-    <div class="meta" style="margin:6px 0 18px 0">Clear, neutral, modern. Regular / Medium / Bold.</div>
-    <div class="type-samples">
-        <div class="type-label">Lede 24 / Bold</div>
-        <div style="font-size:24px;font-weight:700;line-height:1.25;letter-spacing:-0.01em">Calm, confident capital for founder-led growth.</div>
+<div class="card" style="padding:24px 32px">
+    <h3 style="margin-top: 0;">Body · Inter</h3>
+    <div class="meta">Clear, neutral, modern</div>
+    <div class="type-samples" style="margin: 20px 0;">
+        <div class="type-label">LEDE 24 / BOLD</div>
+        <div style="font-size:24px;font-weight:700;line-height:1.2">Calm, confident capital for founder-led growth.</div>
 
-        <div class="type-label">Body 16 / Regular</div>
-        <div style="font-size:16px;font-weight:400;line-height:1.65">Long-form paragraphs default to Inter Regular at 16px. Calm, literal, never promotional. Sentence case throughout.</div>
+        <div class="type-label">BODY 16 / REG</div>
+        <div style="font-size:16px;font-weight:400;line-height:1.7">Long-form paragraphs default to Inter Regular at 16px. Calm, literal, never promotional.</div>
 
-        <div class="type-label">Label 14 / Medium</div>
-        <div style="font-size:14px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase">Portfolio · Approach · Contact</div>
+        <div class="type-label">LABEL 14 / MED</div>
+        <div style="font-size:14px;font-weight:500;letter-spacing:0.01em">Portfolio · Approach · Contact</div>
     </div>
 </div>
 
-<div class="card">
-    <h3 style="margin-top:8px">Accent — Minion Pro Italic</h3>
-    <div class="meta" style="margin:6px 0 18px 0">Taglines and pull-quotes only. Italic only, ever.</div>
-    <div style="font-family:var(--font-serif);font-style:italic;font-size:32px;line-height:1.25;letter-spacing:-0.01em">Where what you built becomes what lives on.</div>
-    <p style="font-size:11px;color:var(--fg-subtle);margin-top:18px;letter-spacing:0.06em;text-transform:uppercase">Minion Pro Italic · 32 / 40 · Never Roman, never for UI</p>
-</div>
-
-<div class="divider"></div>
-
-<!-- MOTIFS -->
-<div class="card">
-    <div class="meta">Motifs</div>
-    <h2>Forward Arrow &amp; Chevron</h2>
-</div>
-
-<div class="card">
-    <p>Two reusable marks. Used with restraint — never as decoration.</p>
-    <h3>Forward Arrow</h3>
-    <p style="margin-bottom:18px">List marker, CTA suffix and the "X" of the wordmark.</p>
-    <div style="display:flex;align-items:center;gap:32px;padding:24px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)">
-        <svg style="width:96px;height:48px;fill:currentColor"><use href="#fa"></use></svg>
-        <div style="font-family:var(--font-sans);font-size:12px;color:var(--fg-muted);letter-spacing:0.06em;text-transform:uppercase;line-height:1.6">Solid triangle head<br>Horizontal bar tail<br>1.5 ratio width to height</div>
-    </div>
-
-    <h3>Chevron</h3>
-    <p style="margin-bottom:8px">Repeats programmatically. Anchored to a corner or an inset detail — never wallpaper.</p>
-    <div class="chevron-pattern"></div>
+<div class="card" style="padding:24px 32px">
+    <h3 style="margin-top: 0;">Accent · Minion Pro Italic</h3>
+    <div class="meta">Taglines and pull quotes only</div>
+    <div style="font-family:'Minion Pro',Georgia,serif;font-style:italic;font-size:32px;line-height:1.25;letter-spacing:-0.01em;margin: 20px 0">Where what you built becomes what lives on.</div>
+    <p style="font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 12px;">Minion Pro Italic · 32/40 · Never Roman, never for UI</p>
 </div>
 
 <div class="divider"></div>
@@ -713,41 +785,62 @@ li strong{font-weight:600}
     <h2>Spacing Scale</h2>
 </div>
 
-<div class="card">
-    <div class="meta" style="margin-bottom:8px">4pt base unit · 50px page gutter</div>
+<div class="card" style="padding:24px 32px">
+    <div class="meta">4pt base unit</div>
     <div class="spacing-demo">
-        <div class="spacing-unit"><div class="spacing-box" style="width:4px;height:4px"></div><span class="spacing-label">4</span></div>
-        <div class="spacing-unit"><div class="spacing-box" style="width:8px;height:8px"></div><span class="spacing-label">8</span></div>
-        <div class="spacing-unit"><div class="spacing-box" style="width:16px;height:16px"></div><span class="spacing-label">16</span></div>
-        <div class="spacing-unit"><div class="spacing-box" style="width:24px;height:24px"></div><span class="spacing-label">24</span></div>
-        <div class="spacing-unit"><div class="spacing-box" style="width:32px;height:32px"></div><span class="spacing-label">32</span></div>
-        <div class="spacing-unit"><div class="spacing-box" style="width:50px;height:50px"></div><span class="spacing-label">50 Gutter</span></div>
-        <div class="spacing-unit"><div class="spacing-box" style="width:80px;height:80px"></div><span class="spacing-label">80</span></div>
+        <div class="spacing-unit">
+            <div class="spacing-box" style="width:4px;height:4px"></div>
+            <span class="spacing-label">4</span>
+        </div>
+        <div class="spacing-unit">
+            <div class="spacing-box" style="width:8px;height:8px"></div>
+            <span class="spacing-label">8</span>
+        </div>
+        <div class="spacing-unit">
+            <div class="spacing-box" style="width:16px;height:16px"></div>
+            <span class="spacing-label">16</span>
+        </div>
+        <div class="spacing-unit">
+            <div class="spacing-box" style="width:24px;height:24px"></div>
+            <span class="spacing-label">24</span>
+        </div>
+        <div class="spacing-unit">
+            <div class="spacing-box" style="width:32px;height:32px"></div>
+            <span class="spacing-label">32</span>
+        </div>
+        <div class="spacing-unit">
+            <div class="spacing-box" style="width:50px;height:50px"></div>
+            <span class="spacing-label">50 gutter</span>
+        </div>
+        <div class="spacing-unit">
+            <div class="spacing-box" style="width:80px;height:80px"></div>
+            <span class="spacing-label">80</span>
+        </div>
     </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- BORDERS -->
+<!-- BORDERS & ELEMENTS -->
 <div class="card">
     <div class="meta">Visual Elements</div>
-    <h2>Borders &amp; Rules</h2>
+    <h2>Borders & Rules</h2>
 </div>
 
-<div class="card">
-    <div class="meta" style="margin-bottom:8px">Hairlines · Radius 0 · No shadows</div>
+<div class="card" style="padding:24px 32px">
+    <div class="meta">Hairlines, radius, shadows</div>
     <div class="borders-demo">
         <div class="border-item">
             <div class="border-title">Card</div>
-            <div class="border-desc">1px hairline · radius 0 · no shadow</div>
+            <div class="border-desc">1px hairline<br/>radius 0<br/>no shadow</div>
         </div>
         <div class="border-item strong">
             <div class="border-title">Strong</div>
-            <div class="border-desc">1px solid fg · radius 0</div>
+            <div class="border-desc">1px solid fg<br/>radius 0</div>
         </div>
         <div class="border-item rule">
             <div class="border-title">Rule</div>
-            <div class="border-desc">Top &amp; bottom · section divider</div>
+            <div class="border-desc">Top &amp; bottom<br/>section divider</div>
         </div>
     </div>
 </div>
@@ -760,56 +853,35 @@ li strong{font-weight:600}
     <h2>Components</h2>
 </div>
 
-<div class="card">
-    <h3 style="margin-top:8px">Kicker + Eyebrow</h3>
-    <div class="meta" style="margin:6px 0 18px 0">28px rule · 12px gap · Inter Medium 14px</div>
-    <div style="display:inline-flex;align-items:center;gap:12px;font-family:var(--font-sans);font-weight:500;font-size:14px;letter-spacing:0.04em;text-transform:uppercase">
+<div class="card" style="padding:24px 32px">
+    <h3 style="margin-top: 0;">Kicker + Eyebrow</h3>
+    <div class="meta">Rule + label</div>
+    <div style="display:inline-flex;align-items:center;gap:12px;font-family:Inter;font-weight:500;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;margin: 16px 0">
         <span style="display:inline-block;width:28px;height:1px;background:#fff"></span>
         <span>Our Approach</span>
     </div>
+    <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 12px;">28px rule · 12px gap · Inter Medium 14px</p>
 </div>
 
-<div class="card">
-    <h3 style="margin-top:8px">Arrow List</h3>
-    <div class="meta" style="margin:6px 0 18px 0">Forward-arrow list marker</div>
-    <ul style="font-size:18px;line-height:1.8">
-        <li>Liquidity for founders ready to step back.</li>
-        <li>Succession that protects the legacy.</li>
-        <li>A proven operator-led growth engine.</li>
+<div class="card" style="padding:24px 32px">
+    <h3 style="margin-top: 0;">Arrow List</h3>
+    <div class="meta">Forward-arrow list</div>
+    <ul style="list-style:none;padding:0;margin:16px 0 0 0;font-family:Inter;font-size:18px;line-height:1.8">
+        <li style="position:relative;padding-left:40px;margin-bottom:10px"><span style="position:absolute;left:0;top:0">→</span>Liquidity for founders ready to step back.</li>
+        <li style="position:relative;padding-left:40px;margin-bottom:10px"><span style="position:absolute;left:0;top:0">→</span>Succession that protects the legacy.</li>
+        <li style="position:relative;padding-left:40px"><span style="position:absolute;left:0;top:0">→</span>A proven operator-led growth engine.</li>
     </ul>
 </div>
 
-<div class="card">
-    <h3 style="margin-top:8px">Buttons</h3>
-    <div class="meta" style="margin:6px 0 18px 0">Hard corners · Opacity-only states</div>
+<div class="card" style="padding:24px 32px">
+    <h3 style="margin-top: 0;">Buttons</h3>
+    <div class="meta">Hard corners · Opacity-only states</div>
     <div class="buttons-demo">
-        <a href="#" class="btn btn-primary">Get in touch <svg><use href="#fa"></use></svg></a>
-        <a href="#" class="btn btn-secondary">Our approach <svg><use href="#fa"></use></svg></a>
-        <a href="#" class="btn btn-text">Read more <svg><use href="#fa"></use></svg></a>
+        <a href="#" class="button-primary">Get in touch <span>→</span></a>
+        <a href="#" class="button-secondary">Our approach <span>→</span></a>
+        <a href="#" class="button-text">Read more <span>→</span></a>
     </div>
-    <p style="font-size:11px;color:var(--fg-subtle);margin-top:24px;letter-spacing:0.06em;text-transform:uppercase">Radius 0 · Hover opacity 0.7 · Active opacity 0.5</p>
-</div>
-
-<div class="divider"></div>
-
-<!-- VOICE -->
-<div class="card">
-    <div class="meta">Voice</div>
-    <h2>How We Sound</h2>
-</div>
-
-<div class="card">
-    <p style="font-family:var(--font-serif);font-style:italic;font-size:22px;line-height:1.35;letter-spacing:-0.01em;margin-bottom:24px">Calm. Confident. Human. Understated.</p>
-    <p>Copy reads like it was written by an operator who has already made the decision you're considering. First-person plural for the firm. Second person for the founder. Founders are named — Bodie and Tom — not hidden behind "our team".</p>
-
-    <h3>Avoid</h3>
-    <ul>
-        <li>Hype: "unlock", "10x", "revolutionary", "game-changing", "transform"</li>
-        <li>Urgency: "now", "don't miss", "limited time"</li>
-        <li>Consulting cues: "leverage", "synergies", "solutions", "offerings"</li>
-        <li>"Help" language — Exit Forward doesn't help, it partners</li>
-        <li>Emoji. Ever.</li>
-    </ul>
+    <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 16px;">radius 0 · hover opacity 0.7 · active opacity 0.5</p>
 </div>
 
 <div class="divider"></div>
@@ -821,43 +893,55 @@ li strong{font-weight:600}
 </div>
 
 <div class="kit-section">
-    <p>Everything you need to apply the Exit Forward brand consistently. All files in one download.</p>
+    <p>Everything you need to use the Exit Forward brand consistently. All files in one download.</p>
 
     <div class="kit-grid">
-        <div class="kit-item"><span class="kit-label">Logo Suite</span><svg><use href="#fa"></use></svg></div>
-        <div class="kit-item"><span class="kit-label">Typography</span><svg><use href="#fa"></use></svg></div>
-        <div class="kit-item"><span class="kit-label">Colour Palette</span><svg><use href="#fa"></use></svg></div>
-        <div class="kit-item"><span class="kit-label">Motifs &amp; Glyphs</span><svg><use href="#fa"></use></svg></div>
-        <div class="kit-item"><span class="kit-label">Grid &amp; Spacing</span><svg><use href="#fa"></use></svg></div>
-        <div class="kit-item"><span class="kit-label">Component Library</span><svg><use href="#fa"></use></svg></div>
+        <div class="kit-item">
+            <span class="kit-label">Logo Suite</span>
+            <span class="kit-icon">→</span>
+        </div>
+        <div class="kit-item">
+            <span class="kit-label">Typography</span>
+            <span class="kit-icon">→</span>
+        </div>
+        <div class="kit-item">
+            <span class="kit-label">Colour Palette</span>
+            <span class="kit-icon">→</span>
+        </div>
+        <div class="kit-item">
+            <span class="kit-label">Icons & Glyphs</span>
+            <span class="kit-icon">→</span>
+        </div>
+        <div class="kit-item">
+            <span class="kit-label">Grid & Spacing</span>
+            <span class="kit-icon">→</span>
+        </div>
+        <div class="kit-item">
+            <span class="kit-label">Component Library</span>
+            <span class="kit-icon">→</span>
+        </div>
     </div>
 
-    <div style="margin-top:40px;padding-top:32px;border-top:1px solid var(--hairline)">
-        <button class="btn btn-primary" style="width:100%;justify-content:center;padding:18px 22px;font-size:14px" onclick="downloadBrandKit()">
-            Download Complete Brand Kit (.zip)
-            <svg><use href="#fa"></use></svg>
-        </button>
-        <p style="font-size:11px;color:var(--fg-subtle);margin-top:14px;letter-spacing:0.06em;text-transform:uppercase;text-align:center">All assets, fonts and guidelines in one file</p>
+    <div style="margin-top: 48px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.24);">
+        <button class="download-btn" style="width: 100%; padding: 16px; font-size: 14px; margin-top: 0;" onclick="downloadBrandKit()">↓ Download Complete Brand Kit (.zip)</button>
+        <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 12px; text-align: center;">All assets, fonts, and guidelines in one file</p>
     </div>
 </div>
 
 <div class="divider"></div>
 
 <!-- FOOTER -->
-<div class="card footer">
-    <div class="footer-mark">
-        <img src="assets/exit-forward-logo.svg" alt="Exit Forward">
-        <span class="version" style="margin-top:0">Perth · Australia</span>
-    </div>
-    <p class="version" style="margin:0">Exit Forward Brand Guide · Version 2.1 · May 2026</p>
-    <p class="version" style="margin:8px 0 0 0;color:rgba(255,255,255,0.3)">Internal working document. For team alignment and founder discussions.</p>
+<div class="card" style="text-align: center; border-top: 1px solid rgba(255,255,255,0.24); padding-top: 48px;">
+    <p class="version" style="margin: 0;">Exit Forward Brand Guide, Version 2.1</p>
+    <p class="version" style="margin: 8px 0 0 0; color: rgba(255,255,255,0.3);">Internal working document. For team alignment and founder discussions.</p>
 </div>
 
 </main>
 
 <script>
-function downloadBrandKit(){
-    alert("Brand Kit download coming soon. Contact hello@exitforward.com.au for access.");
+function downloadBrandKit() {
+    alert('Brand Kit download coming soon. Contact support@exitforward.com.au for access.');
+    // Production: window.location.href = '/assets/exit-forward-brand-kit-v2.1.zip';
 }
 </script>
 
